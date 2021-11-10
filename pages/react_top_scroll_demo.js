@@ -1,4 +1,7 @@
-import TopScroll from "react_top_scroll";
+import dynamic from "next/dynamic";
+const TopScrollNoSSR = dynamic(import("react_top_scroll"), {
+  ssr: false,
+});
 
 function ReactTopScrollDemo() {
   return (
@@ -14,7 +17,7 @@ function ReactTopScrollDemo() {
       >
         Scroll page down, please.
       </div>
-      <TopScroll />
+      <TopScrollNoSSR />
     </div>
   );
 }
